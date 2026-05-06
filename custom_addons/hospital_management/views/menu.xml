@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="hospital_root"
+              name="Hospital Management"/>
+
+    <!-- Patients -->
+    <menuitem id="patient_menu"
+              name="Patients"
+              parent="hospital_root"/>
+
+    <menuitem id="patient_submenu"
+              parent="patient_menu"
+              action="patient_action"
+              name="Manage Patients"/>
+
+    <!-- Doctors -->
+    <menuitem id="doctor_menu"
+              name="Doctors"
+              parent="hospital_root"/>
+
+    <menuitem id="doctor_submenu"
+              parent="doctor_menu"
+              action="doctor_action"
+              name="Manage Doctors"/>
+
+    <!-- Appointments -->
+    <menuitem id="appointment_menu"
+              name="Appointments"
+              parent="hospital_root"/>
+
+    <menuitem id="appointment_submenu"
+              parent="appointment_menu"
+              action="appointment_action"
+              name="Manage Appointments"/>
+</odoo>

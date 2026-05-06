@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="appointment_form_view" model="ir.ui.view">
+        <field name="name">appointment.form</field>
+        <field name="model">hospital.appointment</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_confirm" string="Confirm" type="object" states="draft" class="oe_highlight"/>
+                    <button name="action_done" string="Done" type="object" states="confirmed" class="oe_highlight"/>
+                    <field name="status" widget="statusbar" statusbar_visible="draft,confirmed,done"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="patient_id"/>
+                        <field name="doctor_id"/>
+                        <field name="appointment_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="appointment_tree_view" model="ir.ui.view">
+        <field name="name">appointment.tree</field>
+        <field name="model">hospital.appointment</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="appointment_date"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="appointment_action" model="ir.actions.act_window">
+        <field name="name">Appointments</field>
+        <field name="res_model">hospital.appointment</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
